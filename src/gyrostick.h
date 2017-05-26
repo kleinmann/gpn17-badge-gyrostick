@@ -4,13 +4,13 @@
 
 class Gyrostick {
  public:
-  imu::Vector<2> coords();
+  imu::Vector<3> coords();
  private:
   Gyrostick_Sensor sensor;
   double getUsableX(double x);
 };
 
-imu::Vector<2> Gyrostick::coords() {
+imu::Vector<3> Gyrostick::coords() {
   imu::Vector<3> data = this->sensor.euler();
 
   double x = getUsableX(data.x());
@@ -20,7 +20,7 @@ imu::Vector<2> Gyrostick::coords() {
   y = (y / 360.0) * 128.0;
   z = (z / 360.0) * 128.0;
 
-  return imu::Vector<2>(y, z);
+  return imu::Vector<3>(y, z, x);
 }
 
 double Gyrostick::getUsableX(double x) {

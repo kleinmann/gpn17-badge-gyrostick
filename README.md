@@ -15,7 +15,7 @@ Use like this:
 #include <gyrostick.h>
 
 Gyrostick stick;
-stick.coords() // Returns an imu::Vector<2> with x and y axis coordinates
+stick.coords() // Returns an imu::Vector<3> with x and y axis coordinates and z axis rotation
 ```
 
 The coordinates range from `0` to `128`.
