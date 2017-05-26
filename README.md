@@ -12,6 +12,8 @@ initialize the sensor.
 Use like this:
 
 ```c
+#include <gyrostick.h>
+
 Gyrostick stick;
 stick.coords() // Returns an imu::Vector<2> with x and y axis coordinates
 ```
